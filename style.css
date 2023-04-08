@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root{
+    --body-clr:hsl(216, 12%, 8%);
+    --btn-clr : hsl(25,97%,53%);
+    --container-clr:linear-gradient(hsl(212, 18%, 14%), hsl(220, 16%, 11%));
+    --desc-clr: hsl(216, 12%, 54%);
+    --rating-clr:hsl(213, 19%, 18%);
+    --rating-active-clr:hsl(217, 12%, 63%);
+    --heading-clr:hsl(0, 0%, 100%)
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--body-clr);
+    font-family: 'Overpass', sans-serif;
+    
+
+}
+
+h1,button{
+    color: var(--heading-clr);
+}
+p,.rating-child{
+    color: var(--desc-clr);
+}
+
+.main-card{
+    display: grid;
+    padding: 1rem;
+    gap: 1rem;
+    background: var(--container-clr);
+    border-radius: 2rem;
+}
+
+.rating-container{
+    display: flex;
+    gap: 2rem;
+}
+
+p{
+    max-width: 350px;
+}
+.rating-child{
+    background-color: var(--rating-clr);
+    border-radius: 50%;
+    padding: 0.764rem;
+    flex-grow: 1;
+    flex-basis: 0;
+    text-align: center;
+    cursor: pointer;
+}
+.rating-child:hover{
+    background-color: var(--btn-clr);
+    color: var(--heading-clr);
+}
+.rating-child-active{
+    background-color: var(--rating-active-clr);
+    color: var(--heading-clr);
+}
+
+button{
+    border-radius: 2rem;
+    border: none;
+    padding: 1rem;
+    text-transform: uppercase;
+    background-color: var(--btn-clr);
+    cursor: pointer;
+}
+
+
+button:not(.disabled):hover{
+    background-color: var(--heading-clr);
+    color: var(--btn-clr);
+}
+
+.disabled{
+    opacity: .5;
+    cursor: no-drop;
+}
+
+.picture-star{
+    place-self: start;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: var(--rating-clr);
+    display: grid;
+}
+
+.grid-center{
+    place-items: center;
+}
+.text-center{
+    text-align: center;
+}
+.rating-chosen{
+    background-color: var(--rating-clr);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    color: var(--btn-clr);
+}
+.hide{
+    display: none;
+}
+.show{
+    display: grid;
+}
+
+@media (min-width: 420px){
+    .main-card{
+        max-width: 600px;
+    }
+}
